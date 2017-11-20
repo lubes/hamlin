@@ -1,0 +1,607 @@
+// Globals
+
+.fadein {
+    visibility: hidden;
+}
+
+.wrap {
+    padding-top: 60px;
+}
+
+// No Gutters Rows
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Vertical Align
+.flex-items-xs-middle {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+a {
+    &:hover {
+        @include easing();
+        text-decoration: none !important;
+    }
+}
+
+* {
+    &:hover, &:focus {
+        text-decoration: none !important;
+        outline: none !important;
+    } 
+}
+
+// Fonts
+
+h1 {
+    @include mont(900);
+    font-size: 3rem;
+    color: $violet;
+    margin: 0 auto 20px;
+}
+
+h2 {
+    @include mont(800);
+}
+
+h3 {
+    @include mont(700);
+    line-height: 1.5;
+    margin: 0 auto 20px;
+}
+
+.section-title {
+    margin: 0 auto 60px;
+}
+
+h5 {
+    @include mont(800);
+    color: $purple;
+    font-size: 1.35rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+.main, main { 
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.doc {
+    padding: 80px 0 60px;
+    &.directors {
+        padding: 0 0 60px;
+    }
+    &.smaller-pad {
+        padding: 20px 0 60px;
+    }
+}
+
+.entry {
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    .embed-responsive {
+        margin: 40px auto 60px;
+    }
+}
+
+// BG Color
+
+.beige-bg {
+    background: $beige;
+}
+
+.violet-bg {
+    background: $violet;
+}
+
+// Page Headers
+
+.page-header {
+    padding: 60px 0;
+    h1 {
+        margin: 0 auto 50px;
+        &.no-margin {
+            margin: 0 auto;
+        }
+    }
+}
+
+.intro {
+    color: $violet; 
+    height: 800px;
+    position: relative;
+    .intro-entry {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        h1 {
+            font-size: 4rem;
+        }
+        h3 {
+            font-size: 2.5rem;
+            @include mont(400);
+        }
+        .btn {
+            margin: 100px auto 0;
+        }
+    }
+} 
+
+// Section Break Images
+
+.section-img {
+    height: 400px;
+    &.large {
+        height: 500px;
+    }
+}
+
+// CTA Boxes
+
+.cta-box {
+    .cta-img {
+        height: 300px;
+        display: block;
+        position: relative;
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $violet;
+            color: #fff;
+            line-height: 300px;
+            text-align: center;
+            @include mont(700);
+            opacity: 0;
+            @include easing();
+        }
+        &:hover {
+            .cta-overlay {
+                opacity: 0.75;
+            }
+        }
+    }
+    .cta-entry {
+        padding: 25px;
+        text-align: center;
+        background: $light; 
+        min-height: 200px;
+        h4 {
+            @include mont(800);
+            color: $violet; 
+        }
+        p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0 auto;
+        }
+    }
+    &.large {
+        max-width: 450px;
+        margin: 0 auto;
+        .cta-img {
+            height: 450px;
+        }
+        .btn {
+            margin: 20px auto 0;
+            max-width: 420px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.number {
+    font-size: 100px;
+    float: left;
+    line-height: 150px;
+    color: $violet;
+    width: 140px;
+    font-weight: lighter;
+    margin-left: 20px;
+}
+
+// Donate Section 
+
+.donate-sec {
+    padding: 100px 0;
+    .donate-entry {
+        max-width: 600px;
+        width: 100%;
+        background: rgba(255,255,255,0.7);
+        padding: 80px;
+        margin: 0 auto;
+    }
+}
+
+// Blog Feed
+
+.blog-feed, .directors {
+    .blog-title {
+        margin: 0 auto;
+        color: #fff;
+        background: $violet;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    .blog-img {
+        position: relative;
+        height: 400px;
+        display: block;
+            &:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            opacity: 0;
+            @include easing();
+        }
+        .entry-title { 
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0; 
+            padding: 20px 40px 20px;
+            text-align: center;
+            @include mont(700);
+            @include easing();
+            span {
+                @include mont(400);
+                display: block;
+                font-size: 1.1rem;
+                margin: 5px auto 0;
+            } 
+        }
+        &:hover {
+            &:before {
+                opacity: 0.3;
+            }
+            .entry-title {
+                bottom: 60px;
+            }
+        }
+    }
+    .link-wrap {
+        padding: 20px;
+    }
+}
+
+// Directors
+
+.directors {
+    .blog-img {
+        height: 350px;
+        &:hover {
+            .entry-title {
+                bottom: 0;
+            }
+        }
+    }   
+}
+
+// Financials
+
+.doc-entry {
+    margin: 20px auto;
+    display: block;
+    border: 3px solid $purple;
+    position: relative;
+    height: 160px;
+    text-align: center;
+    .doc-title {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        @include mont(700);
+        font-size: 1.5rem;
+        @include easing();
+    }
+    &:hover {
+        background: $purple;
+        .doc-title {
+            color: #fff;
+        }
+    }
+}
+
+// Bottom CTA Block
+
+.bottom-cta {
+    .cta-block {
+        padding: 120px 40px; 
+        max-width: 500px;
+        margin: 0 auto;
+        .cta-entry {
+            min-height: 200px;
+        }
+        h3 {
+            @include mont(900);
+            font-size: 2.25rem;
+            line-height: 1.25;
+            color: $violet;
+            margin: 0 auto 20px;
+        }
+        .btn {
+            margin: 40px auto 0;
+        }
+    }
+    .cta-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Info Boxes
+
+.info-box {
+    border-bottom: 3px solid $violet;
+    margin: 25px;
+    position: relative;
+    height: 350px;
+    .info-img {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 0;  
+    }
+    p {
+        color: $violet;
+        font-size: 1.25rem;
+        line-height: 1.35;
+        position: absolute;
+        bottom: 20px;    
+        @include mont(400);
+    }
+    &.info-link {
+        background: $violet;
+        height: 100%;
+        .info-entry {
+            padding: 40px 60px;
+            h3 {
+                color: #fff;  
+                line-height: 1.25;
+                @include mont(700);
+                margin: 0 auto 20px;
+            }
+        }
+    }
+}
+
+
+.info-text {
+    border-bottom: 3px solid $violet;
+    margin: 25px;
+    p {
+        color: $violet;
+        font-size: 1.25rem;
+        line-height: 1.35; 
+        @include mont(400);
+    }
+}
+
+.info-icon { 
+    height: 200px;
+    width: 100%;
+}
+
+// Modals
+
+.modal {
+    .modal-content {
+        border-radius: 0;
+        border: none;
+    }
+    .modal-dialog {
+        max-width: 900px;
+    }
+    .modal-body {
+        padding: 60px;
+        h2 {
+            color: $violet;
+        }
+        .entry-title { 
+            @include mont(700);
+            span {
+                @include mont(400);
+                display: block;
+                font-size: 1.1rem;
+                margin: 5px auto 0;
+            } 
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+    }  
+    &.smaller {
+        .modal-dialog {
+            max-width: 600px;
+        }
+    }
+}
+
+.signup-form {
+    label {
+        @include mont(500);
+    }
+    .field-group {
+        margin: 0 auto 10px;
+    }
+    .btn {
+        text-align: center !important;
+        text-transform: uppercase;
+    }
+    .form-control {
+        border-radius: 0;
+        border: none;
+        background: $light;
+        padding: 12px 20px;
+    }
+}
+
+button.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    opacity: 1;
+    color: purple;
+    font-size: 48px;
+    z-index: 1;
+}
+
+// Ajax Modal
+
+#project-container {
+    opacity: 0;
+    min-height: 500px;
+    @include easing();
+    &.active {
+        opacity: 1;
+    }
+}
+
+// Phones
+
+@media (max-width: 575px) {
+    
+    .doc {
+        padding: 40px 0 30px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }    
+    
+    .blog-feed {
+        .blog-title {
+            padding: 40px 10px;
+            font-size: 1.5rem;
+        }
+    }
+    
+    .intro {
+        height: 500px;
+        background-position: 80% 100%;
+        .intro-entry {
+            h1 {
+                font-size: 3rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            .btn {
+                margin: 50px auto 0;
+            }
+        }
+    }
+    
+    .page-header {
+        padding: 40px 0;
+    }
+    
+    .section-img {
+        background-attachment: initial !important;
+        height: 150px;
+    }
+    
+    .cta-box {
+        margin: 0 auto 20px;
+        &.large {
+            margin: 0 auto 40px;
+        }
+    }
+    
+    .donate-sec {
+        padding: 80px 20px;
+        .donate-entry {
+            padding: 40px;
+        }
+    }
+     
+    .bottom-cta {
+        .cta-block {
+            padding: 40px;
+            max-width: 100%;
+            .cta-entry {
+                min-height: 0;   
+            }
+        }
+        .cta-image {
+            height: 300px;
+        }
+    }
+    
+    .info-box {
+        height: 100%;
+        padding: 40px 0 0;
+        .info-img {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+        p {
+            position: relative;
+            margin: 60px auto 0;
+            bottom: 0;
+        }
+        &.info-link {
+            padding: 0;
+            margin: 0 auto 60px;
+            .info-entry {
+                padding: 40px;
+            }
+        }
+    }
+    
+    .section-img {
+        &.large {
+            height: 300px;
+        }
+    }
+    
+    .modal {
+        .modal-body {
+            padding: 60px 20px;   
+        }
+    }
+    
+}
+
+

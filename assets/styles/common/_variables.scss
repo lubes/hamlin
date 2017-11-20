@@ -1,0 +1,29 @@
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #4b0426;
+$purple:                #4b0426;
+$violet:                #796297;
+$beige:                 #faf0e6;
+$light:                 #f7f7f7;
+
+@mixin mont($weight) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $weight;
+}
+
+@mixin easing() {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+// Box Shadow
+@mixin shadow {
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+}

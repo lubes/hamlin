@@ -1,0 +1,144 @@
+.content-info {
+    .footer-menu {
+        padding: 60px 0 40px;
+    }
+    h6 {
+        @include mont(800);
+        font-size: 1.15rem;
+        a {
+            color: $violet;
+        }
+    }
+    ul {
+        li {
+            a {
+                color: #555;
+            }
+        }
+    }
+    .copyright {
+        background: $light;
+        padding: 40px 0;
+        text-align: center;
+        p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    }
+    .socials {
+        li {
+            display: inline-block;
+            margin: 0 7px;
+            a {
+                display: block;
+                font-size: 1.75rem;
+                color:$violet;
+                &:hover {
+                    color: $purple;
+                }
+            }
+        }
+    }
+    .footer-nav {
+        .inner-footer-nav {
+            padding: 0;
+            list-style: none;
+            li {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 16.6666666667%;
+                flex: 0 0 16.6666666667%;
+                max-width: 16.6666666667%;
+                .nav-link {
+                    @include mont(700);
+                    display: block;
+                    font-size: 1.15rem;
+                    color:$violet;
+                    line-height: 1.2;
+                    padding: 0;
+                    margin: 0 auto 10px;
+                    padding: 0 25px 0 0;
+                }
+                .dropdown-menu {
+                    position: relative;
+                    display: block;
+                    top: 0;
+                    background: none;
+                    border: none;
+                    box-shadow: none;
+                    margin: 0 auto 20px;
+                    .dropdown-item {
+                        border: none;
+                        padding: 5px 0;
+                        &:hover, &:focus {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dropdown-item.active, .dropdown-item:active {
+        background: none;
+        color: inherit;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-info {
+        .footer-nav {
+            .inner-footer-nav {
+                li {
+                    .nav-link {
+                        padding: 0;
+                        font-size: 1rem;
+                    }
+                    .dropdown-menu {
+                        .dropdown-item {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .content-info {
+        .footer-nav {
+            .inner-footer-nav {
+                li {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 33.3333333%;
+                    flex: 0 0 33.3333333%;
+                    max-width:  33.3333333%;
+                }
+            }
+        }
+    } 
+}
+
+// Phones
+
+@media (max-width: 575px) {
+
+    .content-info {
+        .copyright {
+            p { 
+                font-size: 0.75rem;
+            }
+        }
+    }
+    .content-info {
+        .footer-nav {
+            padding: 60px 20px 40px;
+        }
+    }
+    .content-info .footer-nav .inner-footer-nav li {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width:  50%;
+    }
+    
+}

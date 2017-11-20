@@ -1,0 +1,179 @@
+.banner {
+    height: 60px;
+    @include shadow();
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+    z-index: 999;
+    .brand {
+        height: 60px;
+        width: 300px;
+        line-height: 60px;
+        text-align: center;
+        background: url('../images/logo.svg') no-repeat center;
+        background-size: 90%;
+        text-indent: -99999px;
+    }
+    .nav-wrap {
+        float: left;
+        width: 100%;
+        background: #fff;
+        ul {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            li {
+                display: inline-block;
+                a {
+                    line-height: 57px;
+                    padding: 0 15px;
+                    color: $purple;
+                    @include mont(500);
+                    display: block;
+                    font-size: 14px;
+                    border-top: 3px solid transparent;
+                    &.active {
+                        background: $violet;
+                        color: #fff;
+                        border-color: $violet;
+                    }
+                    &:hover {
+                        border-color: $purple;
+                    }
+                }
+                &:last-child {
+                    a {
+                        background: $purple;
+                        color: #fff;
+                        height: 60px;
+                        padding: 0 30px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.075em;
+                        &:hover {
+                            background: $violet;
+                            border-color: $violet;
+                        } 
+                    }
+                }
+            }
+        }
+        .brand {
+            float: left;
+        }
+        .nav-primary {
+            float: right;
+            padding: 0;
+        }
+    }
+}
+
+.dropdown-toggle:after {
+    display: none;
+}
+
+.dropdown-menu {
+    border: none;
+    border-top: 3px solid $purple;
+    border-radius: 0;
+    margin: 0 auto;
+    @include shadow(); 
+    padding: 0;
+    .dropdown-item {
+        border-top: none !important;
+        border-bottom: 1px solid #eee;
+        &:hover {
+            border-color: #eee !important;
+        }
+    }
+}
+
+@media (max-width: 1140px) {
+    .banner .nav-wrap .brand {
+        width: 240px;
+    }
+    .banner .nav-wrap ul li a {
+        padding: 0 10px;
+    }
+}
+
+@media (min-width: 993px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    } 
+}
+
+@media (max-width: 992px) {
+    
+    .menu-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 36px;
+        z-index: 9999;  
+    }     
+    
+    .nav-primary {
+        position: fixed;
+        background: $violet;
+        top: -100vh;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        float: none;
+        padding: 60px 40px;
+        @include easing();
+        &.active {
+            top: 0;
+        }
+    }
+    .banner {
+        .nav-wrap {
+            ul {
+                display: block;
+                float: none;
+                padding: 70px 0 0;
+                li {
+                    display: block;
+                    a {
+                        color: #fff;
+                        font-size: 14px;
+                        padding: 0 40px;
+                        border-bottom: 1px solid #674e87;
+                        &:hover {
+                            color: #fff;
+                            border-color: transparent;
+                        }
+                    }
+                    &:last-child {
+                        padding: 0;
+                        a {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .show>.dropdown-menu {
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+        background: #8e77ac;
+        border-top: none;
+        margin: 0 auto;
+        .dropdown-item {
+            border-bottom: 1px solid $violet;
+            &.active {
+                background: #674e87;
+            }
+        }
+    }
+}
