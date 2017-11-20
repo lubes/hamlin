@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # [Sage](https://roots.io/sage/)
 
 ## Requirements
@@ -24,7 +23,7 @@ From the command line:
 
 You now have all the necessary dependencies to run the build process.
 
-### Used Plugins
+### Used Plugins in this Theme
 
 ACF
 ACF Repeater
